@@ -1,0 +1,275 @@
+{
+
+    "data":{
+
+    "dob" : "2012-12-10",
+
+    "contact" : 9487584354,
+
+    "email" : "prernathanai@gmail.com",
+
+    "password" : "12345",
+
+    "fullName" : "Prerna",
+
+    "category" : [
+
+        {
+
+            "budget" : 4000,
+
+            "categoryName" : "tax",
+
+            "categoryId" : "520691"
+
+        }
+
+    ],
+
+    "transaction" : [
+
+        {
+
+            "description" : "Transport",
+
+            "expense" : 1001,
+
+            "date" : "2017-10-12",
+
+            "categoryId" : "520691",
+
+            "account_id" : "987654321",
+
+            "transaction_id" : 228793476
+
+        }
+
+    ],
+
+    "account" : [
+
+        {
+
+            "type" : "saving",
+
+            "name" : "hdfc bank",
+
+            "balances" : 5000,
+
+            "account_id" : "123456789"
+
+        }
+
+           ]
+
+},
+
+"mockResponse":{
+
+"dob" : "2012-12-10",
+
+    "contact" : 9487584354,
+
+    "email" : "prernathanai@gmail.com",
+
+    "password" : "12345",
+
+    "fullName" : "Prerna",
+
+    "category" : [
+
+        {
+
+            "budget" : 4000,
+
+            "categoryName" : "tax",
+
+            "categoryId" : "520691"
+
+        }
+
+    ],
+
+    "transaction" : [
+
+        {
+
+            "description" : "Transport",
+
+            "expense" : 1001,
+
+            "date" : "2017-10-12",
+
+            "categoryId" : "520691",
+
+            "account_id" : "987654321",
+
+            "transaction_id" : 228793476
+
+        }
+
+    ],
+
+    "account" : [
+
+        {
+
+            "type" : "saving",
+
+            "name" : "hdfc bank",
+
+            "balances" : 5000,
+
+            "account_id" : "123456789"
+
+        }
+
+           ]
+
+},
+
+"dataUndefined":{
+
+    "dob" : "2012-12-10",
+
+    "contact" : 9487584354,
+
+    "email" : "undefined",
+
+    "password" : "12345",
+
+    "fullName" : "Prerna"
+
+},
+
+"dataNegative":{
+
+"dob" : "2012-12-10",
+
+    "contact" : 9487584354,
+
+    "email" : "prernathanai12@gmail.com",
+
+    "password" : "12345",
+
+    "fullName" : "Prerna",
+
+    "category" : [
+
+        {
+
+            "budget" : 4000,
+
+            "categoryName" : "tax",
+
+            "categoryId" : "520691"
+
+        }
+
+    ],
+
+    "transaction" : [
+
+        {
+
+            "description" : "Transport",
+
+            "expense" : 1001,
+
+            "date" : "2017-10-12",
+
+            "categoryId" : "520691",
+
+            "account_id" : "987654321",
+
+            "transaction_id" : 228793476
+
+        }
+
+    ],
+
+    "account" : [
+
+        {
+
+            "type" : "saving",
+
+            "name" : "hdfc bank",
+
+            "balances" : 5000,
+
+            "account_id" : "123456789"
+
+        }
+
+           ]
+
+},
+
+"mockResponseCategoryMail": {
+
+    "ok":"200",
+
+    "status":"true",
+
+    "statusText":"OK"
+
+},
+
+"categoryMail":{
+
+    "category":"tax",
+
+    "email":"undefined",
+
+    "categoryBudget":"10000",
+
+    "expenses":"12000"
+
+},
+
+"categoryMailNegative": {
+
+    "ok":"400",
+
+    "status":"true",
+
+    "statusText":"OK"
+
+},
+
+"categoryMailUndefined": {
+
+    "ok":"400",
+
+    "status":"undefined",
+
+    "statusText":"OK"
+
+},
+
+"subject":{
+
+    "message":"Budget Overshoot Alert"
+
+},
+
+"subjectUndefined":{
+
+    "message":"undefined"
+
+},
+
+"component":{
+
+    "message":"dashboard"
+
+},
+
+"componentUndefined":{
+
+    "message":"undefined"
+
+}
+
+}

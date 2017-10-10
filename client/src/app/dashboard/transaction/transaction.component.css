@@ -1,0 +1,93 @@
+#category{
+background-color: whitesmoke;
+background-color: #3f3250;;
+}
+#edit{
+color: whitesmoke;
+background-color: #3f3250;
+margin-left: 2em;
+
+}
+#delete{
+  margin-left: 3em;
+}
+#table-list{
+  width: 25%;
+}
+#budget{
+color: whitesmoke;
+background-color: #3f3250;
+}
+#setting{
+color: whitesmoke;
+background-color: #3f3250;
+text-align: center;
+
+}
+.btn-danger{
+      /*margin-left: -.5em;*/
+      background-color: #3f3250;
+      border-color:#3f3250;
+      margin-left: 3.5em;
+}
+#icon{
+  margin-left: 1.5em;
+}
+/*#delete{
+  margin-left: -1em;
+}*/
+@media only screen and (min-width: 1024px) {
+  #category{
+background-color: #3f3250;
+color:whitesmoke;
+/*width: 50%;*/
+}
+#edit{
+background-color: #3f3250;
+margin-left: -1.4em;
+color:white;
+size: 1em;
+}
+#budget{
+background-color: #3f3250;
+color:whitesmoke;
+/*width: 50%;*/
+
+}
+#setting{
+background-color: #3f3250;
+color:whitesmoke;
+/*width: 50%;*/
+
+}
+.btn-danger{
+      /*margin-left: -.5em;*/
+      background-color: #3f3250;
+      border-color:#3f3250 ;
+      margin-left: 1em;
+}
+}
+.jumbotron{
+   border-radius:0px!important;
+   box-shadow:1px 1px 4px rgba(0,0,0,0.4);
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   /*background-image: url(https://static.pexels.com/photos/24324/pexels-photo.jpg);*/
+   position: relative;
+   height: 100%;
+   background-color: white;
+margin-top: 50px;
+   /*height: 100%;*/
+
+}
+
+/*.jumbotron .btn{
+   border-radius:0px!important;
+   box-shadow:1px 1px 4px rgba(0,0,0,0.4);
+   padding:10px 40px;
+   margin-left: 40px;
+   background-color: #266979 ;
+   color: silver;
+}
+*/

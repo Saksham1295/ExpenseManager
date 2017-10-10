@@ -1,0 +1,19 @@
+{
+	"data":{
+      "ok":1,
+      "nmodified":1,
+      "n":1
+    },
+    "dataMod":{
+      "ok":1,
+      "nModified":1,
+      "n":1
+    },
+   "mockRes" : { "cardNo": 1234567890987654, "cardHolderName": "Rumani", "expDate": "11/05/2019" },
+    "expectedVal":"[{Account:[{cardNo:'123'}, {cardNo:'124'}]}]",
+    "negData":"card already exists",
+    "mockResponse": { "ok": 1, "nModified": 1, "n": 1 },
+    "dataRes":{ "ok": 0, "nModified": 0, "n": 0 },
+    "dataResponse" :{ "cardNo": 1234567890987654, "cardHolderName": "Rumani", "expDate": "11/05/2019" },
+    "dataNeg": { "cardNo": 1234567890987658, "cardHolderName": "Ruman", "expDate": "10/05/2019" }
+}

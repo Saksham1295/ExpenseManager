@@ -1,0 +1,67 @@
+{
+	"data":{"Account":[{
+      "type":"account",
+      "cardNo":54635363536637
+    }]},
+    "negativeData":{"Account":[{
+      "type":"credit",
+      "cardNo":54635388736637
+    }]},
+   "mockData": {
+      "ok":1,
+      "nModified":1,
+      "n":1
+    },
+     "mockNegativeData": {
+      "response":"account already exists"
+    },
+   "mockResponse" : {
+
+       "ok":1,
+
+       "nModified":1,
+
+       "en":1
+
+      },
+
+
+      "dataResponse" : {
+
+       "ok":1,
+
+       "nModified":1,
+
+       "en":1
+
+      },
+      "dataRes":{
+
+       "ok":0,
+
+       "nModified":0,
+
+       "en":0
+
+      },
+
+
+    "mockRes" :{
+
+       "Account":[{"type":"account","cardNo":73420934}]
+
+      },
+
+      "dataAcc":{
+
+        "Account":[{"type":"account","cardNo":73420934}]
+
+      },
+
+      "dataAccNeg" : {
+
+        "Account":[{"type":"credit","cardNo":73429576}]
+
+      }
+
+}

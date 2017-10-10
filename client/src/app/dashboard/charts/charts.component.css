@@ -1,0 +1,90 @@
+.toggle-header{
+   padding:10px 0;
+   margin:10px 0;
+   background-color:black;
+   color:white;
+}
+.txt-green{
+   color:green;
+}
+.txt-red{
+   color:red;
+}
+#button{
+ margin-top: 2em;
+}
+.btn-md{
+ background-color: #266979 ;
+ color: white; 
+}
+#name{
+ border-color: #266979 ;
+   border-radius: 1em;
+  
+}
+#graph{
+ display: block;
+   height: 178px;
+   width: 356px;
+   margin-top: -4em;
+}
+#name hover{
+border-width: medium;
+}
+#ChartContainer{
+ margin-top: 2em;
+}
+#dashboardGraph{
+ padding: 2em;
+}
+#Heading{
+ margin-top: 3em;
+}
+
+
+.jumbotron{
+   border-radius:0px!important;
+   box-shadow:1px 1px 4px rgba(0,0,0,0.4);
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-image: url(https://static.pexels.com/photos/24324/pexels-photo.jpg);
+   position: relative;
+   height: 80%;
+   background-color: white;
+   margin-top: -8.5em;
+
+   /*height: 100%;*/
+
+}
+
+.jumbotron .btn{
+   border-radius:0px!important;
+   box-shadow:1px 1px 4px rgba(0,0,0,0.4);
+   padding:10px 40px;
+}
+
+.btn-primary{
+ background-color: #266979 ;
+ color: silver;
+     margin-left: 27em;
+}
+
+.panel-heading{
+ margin-top: 2em;
+
+}
+
+#panel{
+ background-color: #266979 ;
+}
+#headingtext{
+ color: white;
+   font-size: 2em;
+   padding-top: .5em;
+   padding-left: .5em;
+   -webkit-font-kerning: unset;
+   font-kerning: unset;
+   font-variant-caps: titling-caps;
+   -webkit-font-smoothing: subpixel-antialiased;
+}

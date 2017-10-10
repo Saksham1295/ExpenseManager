@@ -1,0 +1,44 @@
+<div class="container" id=remove>
+  <form id="abc" (ngSubmit)="onSubmit()" #deletform="ngForm">
+    <div class="row">
+    <h4>{{word.deleteUserHeader}}</h4>
+
+      <!-- Enter Data -->      
+      <div class="input-group input-group-icon,form-group">
+        <input type="email"  class="form-control" id="emailaddress"
+        required
+        [(ngModel)]="email" name="email"
+        placeholder={{word.deleteUserPlaceholder}}
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+        #Email="ngModel"/>
+      </div>
+
+      <!-- Form Validation -->
+      <div [hidden]="Email.valid || Email.pristine"
+      class="alert alert-danger">
+      <div [hidden]="!Email.hasError('required')">{{word.emailRequired}}</div>
+      <div [hidden]="!Email.hasError('pattern')">{{word.emailPattern}} <small><b>{{word.email}}</b></small></div>
+    </div>
+
+
+
+    <div class="input-group input-group-icon">
+      <input type="password" [(ngModel)]="password" 
+      name="password"
+      id="password"
+      required
+      placeholder={{word.passwordPlaceholder}}
+      #Password="ngModel"/>
+      <div class="input-icon" id="key"><i class="fa fa-key"></i></div>
+    </div>
+    <div [hidden]="Password.valid || Password.pristine"
+    class="alert alert-danger">
+    {{word.passwordRequired}}
+  </div> 
+</div>
+
+<!--     Delete Button -->
+<a id="delete" type="button" (click)=delete()   name="delete" class="btn btn-secondary btn-md" >{{word.button}}</a>
+
+</form>
+</div>

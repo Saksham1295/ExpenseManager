@@ -1,0 +1,106 @@
+
+<div id="Add-Category" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="invite_user_info" action="" (ngSubmit)="onSubmit()" #category="ngForm">
+        <input type="hidden" name="csrfmiddlewaretoken" value="EWOIvVzzLzQnlowipCXQAQ49b9rS4aNE">
+        <div class="modal-header" id="modal">
+          <!--    Button for Add Category -->
+          <h4 class="modal-title">{{word.addCategory}}</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body clearfix">
+          <div class="col-lg-12">
+
+            <!-- Validation of Category Field -->
+            <div class="form-group">
+              <label for="Card No.">{{word.category}} </label>
+              <input type="text" [(ngModel)]="data.category" name="Card No"
+              id="category"
+              required
+              pattern="[a-zA-Z][a-zA-Z ]+"
+              class="form-control"
+              #category="ngModel">
+            </div>
+            <div [hidden]="category.valid || category.pristine"
+            class="alert alert-danger">
+            <div [hidden]="!category.hasError('required')">{{word.required_Category}}</div>
+            <div [hidden]="!category.hasError('pattern')">{{word.only_Alphabets}}</div>
+          </div>
+
+           <!-- Validation of Budget Field -->
+          <div class="form-group">
+            <label for="card holder">{{word.budget}}</label>
+            <input type="text" [(ngModel)]="data.budget" name="card holder" 
+            id="budget"
+            required 
+            pattern="[0-9]*"
+            class="form-control"
+            #budget="ngModel">
+          </div>
+          <div [hidden]="budget.valid || budget.pristine"
+          class="alert alert-danger">
+          <div [hidden]="!budget.hasError('required')">{{word.budgetRequired}}</div>
+          <div [hidden]="!budget.hasError('pattern')">{{word.numbers_Allowed}}</div>
+        </div>
+
+          <!--  Validation of Spent Field -->
+        <div class="form-group">
+          <label for="card holder">{{word.spent}}</label>
+          <input type="text" [(ngModel)]="data.spent" name="card holder"
+          id="spent"
+          required 
+          pattern="[0-9]*"
+          class="form-control"
+          #spent="ngModel" >
+        </div>
+        <div [hidden]="spent.valid || spent.pristine"
+        class="alert alert-danger">
+        <div [hidden]="!spent.hasError('required')">{{word.spentRequired}}</div>
+        <div [hidden]="!spent.hasError('pattern')">{{word.numbersAllowed}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+  <!--  Update Button -->
+    <button type="button" class="btn btn-default" data-dismiss="modal" (click) = "edit(data)">{{word.update}}</button>
+    <!--  Save Button -->
+    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addCategory(data)">{{word.save}}</button>
+
+  </div>
+</form>
+</div>
+</div>
+</div>
+
+
+<div class="panel-fluid" id="panel">
+ <div class="container">
+   <div class="row" id="heading">
+     <h1 id="headingtext">{{word.categoryDetails}}</h1>
+     <div class="col col-xs-6 text-right">
+       <a href="javascript:;" class="card-btn" data-toggle="modal" data-target="#Add-Category" title="Add User">
+        <!--  Link for add category -->
+
+        <i class="glyphicon glyphicon-user" aria-hidden="true"></i>  {{word.addCategory}}</a>
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="jumbotron">
+
+  <div class="container" id="container">
+
+   <div class ="row" id=cards>
+     <div  class="col-lg-6 col-md-6 col-sm-6 "  id="card1" *ngFor="let obj of categoryData; let i=index">
+      <div class="card-block" >
+         <!-- Sending property to the child add-category -->
+       <app-add-category  [obj]="obj" [i]="i"></app-add-category>
+
+     </div>
+
+
+   </div>
+ </div>
+</div>

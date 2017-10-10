@@ -1,0 +1,276 @@
+
+   <!-- link for font-awesome -->
+  <!--  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <div class= "container">
+  <div class="row">
+  <div class= "col-md-3 col-sm-4 col-lg-3 col-xl-2">
+    <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-md-3 col-xl-2 bg-faded sidebar-style-1">
+    <img src="../assets/logo2.png" width="120px"> 
+    
+    <a  class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
+    
+    <ul class="nav nav-pills flex-column sidebar-nav"> -->
+    <!-- link for dashboard -->
+      <!-- <li class="nav-item"><a class="nav-link " routerLink="/dashboard"><em class="fa fa-dashboard" ></em> {{word.dashboardHeader}}<span class="sr-only">(current)</span></a></li> -->
+      <!-- link for category manager -->
+      <!-- <li class="nav-item"><a class="nav-link" [routerLink] = "'categorymanager'"><em class="fa fa-th-list"></em> {{word.categoryManager}} </a></li>
+       <li class="nav-item"><a class="nav-link" [routerLink] = "'categories'"><em class="fa fa-th-list"></em> {{word.addcategory}}</a></li>
+       -->
+      <!-- link for card-manager -->
+      <!-- <li class="nav-item"><a class="nav-link" [routerLink] = "'cardmanager'"><em class="fa fa-tasks"></em> {{word.cardManager}}</a></li> -->
+
+  <!-- link for account -->
+       <!-- <li class="nav-item"><a class="nav-link" [routerLink] = "'Account'"><em class="fa fa-user"></em> {{word.createAccount}} </a></li> -->
+  <!-- link for reset -->
+       <!-- <li class="nav-item"><a class="nav-link" [routerLink] = "'reset'"><em class="fa fa-user"></em> {{word.resetPassword}} </a></li> -->
+  <!-- link for delete -->
+    <!--    <li class="nav-item"><a class="nav-link" [routerLink] = "'delete'"><em class="fa fa-trash-o" ></em> {{word.delete}}</a></li>
+      
+      <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#help"><em class="fa fa-question" ></em>{{word.help}}</a></li>
+    </ul> -->
+    <!-- link for sign out -->
+    <!-- <a class="logout-button"   id="sign" (click)=signout()><em class="fa fa-power-off" (click)=signout()></em>{{word.signout}}</a></nav>
+  </div>
+  <div class="col-md-9 col-lg-9 col-xs-12 col-sm-8 col-xl-10">
+
+    <router-outlet></router-outlet>
+    </div>
+    </div>
+    </div>
+    -->
+
+    <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" id="header">
+          <h5 class="modal-title" id="exampleModalLongTitle"> {{word.help}}</h5>
+          <button type="button" class="close" id="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="button" data-dismiss="modal"> {{word.skip}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{{word.expenseManager}}</title>
+  <!-- Bootstrap core CSS-->
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- Custom fonts for this template-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- Page level plugin CSS-->
+  <!-- <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"> -->
+  <!-- Custom styles for this template-->
+  <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top main" id="mainNav">
+    <a class="navbar-brand" href="index.html">Expense Manager</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+ <h2><i class="fa fa-clock-o" aria-hidden="true"></i>{{date | date: "hh:mm:ss"}}</h2>
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link">
+            <i class=" fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text" routerLink="/dashboard"> {{word.dashboardHeader}}</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+         <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+
+            <span class="nav-link-text">{{word.account}}</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+
+              <a class="nav-link" [routerLink] = "'plaidaccount'"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+              {{word.addAccount}}</a>
+            </li>
+            <li>
+              <a class="nav-link" [routerLink] = "'displayplaidaccount'"><i class="fa fa-university" aria-hidden="true"></i>
+             {{word.account}}</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" [routerLink] = "'categories'">
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <span class="nav-link-text">{{word.budget}}</span>
+          </a>
+        </li>  
+      <!--   <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" [routerLink] = "'addtransaction'">
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <span class="nav-link-text">Add Transaction</span>
+          </a>
+        </li> -->   
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" [routerLink] = "'upload'">
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <span class="nav-link-text">Upload</span>
+          </a>
+        </li> 
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link"[routerLink] = "'report'">
+           <i class="fa fa-pie-chart" aria-hidden="true"></i>
+
+            <span class="nav-link-text">{{word.reports}}</span>
+          </a>
+        </li>
+       <!--  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" [routerLink] = "'transaction'" >
+           <i class="fa fa-exchange" aria-hidden="true"></i>
+
+            <span class="nav-link-text">{{word.transaction}}</span>
+          </a>
+        </li> -->
+   
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-exchange" aria-hidden="true"></i>
+
+            <span class="nav-link-text">{{word.transaction}}</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a class="nav-link" [routerLink] = "'addtransaction'"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{word.addTransaction}}</a>
+            </li>
+            <li>
+              <a class="nav-link" [routerLink] = "'transaction'" ><i class="fa fa-exchange" aria-hidden="true">
+                
+              </i> {{word.transaction}}</a>
+            </li>
+          </ul>
+        </li> 
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" data-toggle="modal" data-target="#help">
+           <i class="fa fa-question" aria-hidden="true"></i>
+
+            <span class="nav-link-text">{{word.help}}</span>
+          </a>
+        </li>
+      </ul>
+       <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul> 
+
+
+
+
+
+      <ul class="navbar-nav ml-auto">
+
+
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+      <span class="nav-link-text">Hii user </span>
+      <i class="fa fa-user-circle" aria-hidden="true"></i>
+
+            
+            <span class="indicator text-primary d-none d-lg-block">
+    <!--           <i class="fa fa-fw fa-circle"></i> -->
+            </span>
+          </a>
+
+
+          <div id="user-menu" class="dropdown-menu" aria-labelledby="messagesDropdown">
+     <!--        <h6 class="dropdown-header">Profile:</h6> -->
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink] = "'Account'"><i class="fa fa-user-circle" aria-hidden="true"></i>
+
+              <strong>User Profile</strong>
+              
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink] = "'reset'"><i class="fa fa-key" aria-hidden="true"></i>
+
+              <strong>Change Password</strong>
+              
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)=signout()><i class="fa fa-sign-out" (click)=signout() aria-hidden="true"></i>
+
+              <strong>{{word.signout}}</strong>
+              </a>
+              
+          </div>
+
+
+        </li>
+
+
+
+
+
+
+     
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="content-wrapper">
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    
+    <router-outlet></router-outlet>
+    <!-- Bootstrap core JavaScript-->
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+      <script src="vendor/popper/popper.min.js"></script>  
+    <!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
+    <!-- Core plugin JavaScript-->
+    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
+    <!-- Page level plugin JavaScript-->
+    <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
+    <!-- <script src="vendor/datatables/jquery.dataTables.js"></script> -->
+    <!-- <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
+    <!-- Custom scripts for all pages-->
+  <!--   //<script src="js/sb-admin.min.js"></script> -->
+    <!-- Custom scripts for this page-->
+    <!-- <script src="js/sb-admin-datatables.min.js"></script> -->
+    <!-- <script src="js/sb-admin-charts.min.js"></script> -->
+  </div>
+
+</body>
+
+</html> 
+
+
+
+
+

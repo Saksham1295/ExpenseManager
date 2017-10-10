@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+      <!-- <link rel="stylesheet" href="css/style.css">
+  -->
+  
+</head>
+
+<body>
+  
+<div class="container">
+  <form>
+    <div class="row">
+      <h4>Verification</h4>
+      <h3>Please enter the OTP sent to your email</h3>
+      <div class="input-group input-group-icon">
+        <input type="email" [(ngModel)]="otp" name="email" placeholder="OTP"/>
+        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+      </div>
+      
+    </div>
+   
+      
+      
+       <button id="login" type="button" (click)=verify(otp) class="btn btn-outline-success" >Submit</button><br/><br/>
+     <button (click)=shala()></button>
+  </form>
+</div>
+
+</body>
+</html>

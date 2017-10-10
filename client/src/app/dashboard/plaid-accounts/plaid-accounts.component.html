@@ -1,0 +1,29 @@
+<p>
+  plaid-accounts works!
+</p>
+ <span>{{AccountDetail.account_id}}</span> 
+
+ 
+
+
+
+
+
+ <table class="table">
+
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{AccountDetail.account_id}}</td>
+      <td>{{AccountDetail.balances.current}}</td>
+      <td>{{AccountDetail.official_name}}</td>
+      <td>{{AccountDetail.type}}</td>
+      <td><button (click)="addCard()">Add Card</button></td>
+    </tr>
+ 
+   
+  </tbody>
+</table>
+
+
+

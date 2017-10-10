@@ -1,0 +1,128 @@
+<div class="container-fluid"> 
+      <!-- Breadcrumbs-->
+     <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+    
+
+
+<div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+
+
+
+
+
+
+<!--                                             FINALIZED CHARTS                                                             -->
+
+
+
+<div class="col-md-12">
+
+
+
+<div class="row">
+   <div class="col-md-5 card" id="cards">
+    <h3> Category Budget and Expense Comparison - Line Chart </h3>
+     <canvas id = "categoryBvE" baseChart
+
+     [data]="totalChartData"
+
+     [labels]="ChartLabelsWeek"
+
+     [options]="ChartOptions"
+
+     [colors]="LineChartColors"
+
+     [chartType]="TotalChartType"
+
+     (chartHover)="chartHovered($event)"
+
+     (chartClick)="chartClicked($event)"></canvas>
+
+   </div>
+
+   <div class="col-md-5 card" id="card">
+<h3> Category Expense - Doughnut Chart </h3>
+
+     <canvas id = "doughnutCategory" baseChart
+
+     [data]="categoryDoughnutData"
+
+     [labels]="categoryChartLabels"
+
+     [options]="ChartOptions"
+
+     [colors]="DoughnutChartColors"
+
+     [chartType]="categoryDoughnutType"
+
+     (chartHover)="chartHovered($event)"
+
+     (chartClick)="chartClicked($event)"></canvas>
+
+   </div>
+
+</div>
+
+
+
+<div>
+<h1> Table Recent Expenses </h1>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Expense</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let data of recentTransactionData">
+      <td>{{ data.date }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.expense }}</td>
+      <td>{{ data.categoryName }}</td>
+  </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+<div>
+<h1> Additional Data </h1>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{{word.totalBudget}}</th>
+        <th>{{word.totalExpense}}</th>
+        <th>{{word.topSpentLabel}}</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr >
+      <td>{{selectedtimetotalbudget}}</td>
+      <td>{{selectedtimetotalexpense}}</td>
+      <td>{{topspentcategory}}</td>
+  </tr>
+    </tbody>
+  </table>
+
+</div>
+
+</div>
+
+
+
+<!--                                             FINALIZED CHARTS                                                             -->
+  
+
+
+</div>

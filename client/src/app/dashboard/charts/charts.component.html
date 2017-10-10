@@ -1,0 +1,184 @@
+<div class="container-fluid"> 
+      <!-- Breadcrumbs-->
+     <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+    
+
+
+<div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+
+
+
+  <!-- Button Control panel -->
+
+  <button class="card-btn btn-secondary btn-md
+
+  " id="monthToggle" (click) = ToggleM()>{{word.monthChart}}</button>
+
+  <button class="card-btn btn-secondary btn-md" id="weekToggle" (click) = ToggleW()>{{word.weekChart}}</button>
+
+  <div class="container" id="button">
+  <div class="alert alert-warning" role="alert" *ngIf="flagM">
+
+  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</div>
+
+
+
+   <div class="row">
+
+     <div class="col-md-4">
+
+       <input id="startdate" name="startdate" type="date"  class="form-control" max= {{now}} #startdate="ngModel" [(ngModel)] = "lineChartMonthS">
+       
+     </div>
+     <div [hidden]="startdate.valid || (startdate.pristine)"
+        class="alert alert-danger">
+          <div [hidden]="!startdate.hasError('required')">Password is required</div>
+     </div>
+     <div class="col-md-4">
+
+       <h5>{{lineChartMonthS}}</h5>
+
+     </div>
+
+     <div class="col-md-4">
+
+       <button class="card-btn btn-secondary btn-md" (click)="generateChart(lineChartMonthS)" style="display: inline-block" id= "submit">{{word.showGraphButton}}</button>
+
+     </div>
+
+   </div>
+
+ </div>
+
+ 
+
+ <!-- Chart Display Panel --> 
+
+
+
+ <!-- Monthly Chart Component -->
+
+</div>
+
+<h5>{{displaytitle}}</h5>
+
+
+
+<div class="container" *ngIf="flagM">
+
+ <div class="card">
+
+   <canvas id="monthChart" baseChart
+
+   [data]="totalChartData"
+
+   [labels]="totalChartLabels"
+
+   [options]="totalChartOptions"
+
+   [chartType]="totalChartType"
+
+   (chartHover)="chartHovered($event)"
+
+   (chartClick)="chartClicked($event)">
+
+
+
+ </canvas>
+
+</div>
+
+</div>
+
+
+
+<!-- Weekly Chart Component -->
+
+<div class="container" *ngIf="flagW">
+
+
+
+ <div class="card">
+
+   <div class="row">
+
+    <div class="col-md-6">
+
+     <canvas id = "weekChartTotal" baseChart
+
+     [data]="totalChartData"
+
+     [labels]="totalChartLabelsWeek"
+
+     [options]="totalChartOptions"
+
+     [chartType]="totalChartType"
+
+     (chartHover)="chartHovered($event)"
+
+     (chartClick)="chartClicked($event)"></canvas>
+
+   </div>
+
+   <div class="col-md-6">
+
+     <canvas id = "weekChartCategory" baseChart
+
+     [data]="categoryChartData"
+
+     [labels]="categoryChartLabels"
+
+     [chartType]="categoryChartType"
+
+     (chartHover)="chartHovered($event)"
+
+     (chartClick)="chartClicked($event)"></canvas>
+
+   </div>
+
+ </div>
+
+</div>
+
+</div>
+
+
+
+<!-- Data Display Panel -->
+
+<div>
+
+  <tr>
+
+   <th class="table-danger">{{word.tableLabel}}</th>
+
+ </tr>
+
+ <tr>
+
+   <th class="table-danger">{{word.totalBudget}}</th>
+
+   <th class="table-danger">{{word.totalExpense}}</th>
+
+   <th class="table-danger">{{word.topSpentLabel}}</th>
+
+ </tr>
+
+ <tr>
+
+   <td class="table-info" id = "totalBudget">{{selectedtimetotalbudget}}</td>
+
+   <td class="table-info" id = "totalExpense">{{selectedtimetotalexpense}}</td>
+
+   <td class="table-info" id = "topspentcategory">{{topspentcategory}}</td>
+
+ </tr>
+
+</div>
+</div>

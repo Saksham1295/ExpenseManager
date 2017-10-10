@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>{{word.registerTitle}}</title>
+  <!--include normalize.min.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!--include font-awesome.css--> 
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+</head>
+<div id="hero" class="img-responsive">
+<div class="hero-container"><!--starting of body-->
+  <div class="container">
+    <h3>{{errorMsg}}</h3><!--error message-->
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="row">
+        <h4>{{word.registerHeading}}</h4>
+        <a href="#" class="fa fa-home" id=home aria-hidden="true"> </a>
+        <div class="input-group input-group-icon,form-group" id="input">
+        <!---Enter details-->
+          <input type="text"  pInputText class="input-group input-group-icon,form-control" id="name" 
+          required
+          pattern="[a-zA-Z][a-zA-Z ]+"
+          [(ngModel)]="data.fullName" 
+          name="fullname" 
+          placeholder={{word.registerPlaceholder}}
+          #name="ngModel"/>
+        </div>
+        <!-- validate each field of form-->  
+        <div [hidden]="name.valid || name.pristine"
+        class="alert alert-danger">
+        <div [hidden]="!name.hasError('required')">{{word.required}}</div>
+        <div [hidden]="!name.hasError('pattern')">{{word.pattern}}</div>
+      </div>
+      <div class="input-group input-group-icon,form-group">
+        <input type="email"  pInputText class="form-control" id="emailaddress"
+        required
+        [(ngModel)]="data.email" name="email" 
+        placeholder={{word.adress}}
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+        #email="ngModel"/>
+      </div>
+      <div [hidden]="email.valid || email.pristine"
+      class="alert alert-danger">
+      <div [hidden]="!email.hasError('required')">{{word.er}}</div>
+      <div [hidden]="!email.hasError('pattern')">{{word.format}} <small><b>{{word.joe}}</b></small></div>
+    </div>
+    <div class="input-group input-group-icon, form-group">
+      <input type="password" pInputText  class="form-control" id="password"
+      required
+      [(ngModel)]="data.password" name="password" 
+      placeholder={{word.pp}}
+      #password="ngModel"/>
+    </div> 
+    <div [hidden]="password.valid || password.pristine"
+    class="alert alert-danger">
+    {{word.ps}}
+  </div> 
+  <div class="input-group input-group-icon,form-group">
+    <input type="password"  pInputText class="form-control" id="confirmPassword"
+    required
+    validateEqual="password"
+    [(ngModel)]="data.confirmPassword" name="confirm" 
+    placeholder={{word.cp}}
+    #confirmPassword="ngModel"/>
+    <div [hidden]="confirmPassword.valid || confirmPassword.pristine"
+    class="alert alert-danger">
+    {{word.match}}
+  </div>
+</div>
+<div class="input-group input-group-icon,form-group">
+  <input type="text"  pInputText  class="form-control" id="mobilenumber"
+  required 
+  pattern="[0-9]*"
+  minlength="10"
+  maxlength="10" 
+  #mobile="ngModel"
+  [(ngModel)]="data.contact" name="contact" name="mobilenumber" placeholder={{word.number}}/>
+</div>
+<div [hidden]="mobile.valid || mobile.pristine"
+class="alert alert-danger">
+<div [hidden]="!mobile.hasError('minlength')">{{word.digit}}</div>
+<div [hidden]="!mobile.hasError('required')">{{word.mobile}}</div>
+<div [hidden]="!mobile.hasError('pattern')">{{word.n}}</div>
+</div>
+
+ <div class="ui-calendar ui-calendar-w-btn" >
+<!-- <input class="ui-calendar.ui-calendar-w-btn"> -->
+
+<p-calendar  name="DOB"  placeholder={{word.d}} [showIcon]="true" [(ngModel)]="data.dob"></p-calendar>
+</div> 
+<!-- <div class="input-group input-group-icon">
+  <input type="date"  pInputText  [(ngModel)]="data.dob" name="DOB" placeholder={{word.d}}/>
+</div> -->
+</div> 
+<div class="input-group">
+<!--button-->
+ <button type="button" class="btn btn-secondary btn-sm, register" (click)=register(data) > <h6 class="registerButton">{{word.rb}}</h6></button>
+</div>
+</form>
+</div>
+<!--include jquery-->
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="js/index.js"></script>
+</div>
+</div>
+</html>

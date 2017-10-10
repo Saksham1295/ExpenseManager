@@ -1,0 +1,46 @@
+<div class="panel-body table-responsive">
+  <table class="table table-striped table-bordered table-list" id="table">
+    <thead>
+      <!-- 
+        The following displays the list of
+          * Spending Category
+          * Spending Budget
+          * Money Spent on the category  
+      -->
+      <tr>
+        <th id="category">{{word.category}}</th>
+        <th id="budget" >{{word.budget}}</th>
+        <th id="budget" >{{word.spent}}</th>
+        <th id="setting" ><em id="icon"></em></th>
+      </tr> 
+    </thead>
+
+    <tbody id="myTable">
+                
+      <tr>
+        <!-- The following binds the category, budget and spent property with their respective current values -->                       
+        <td> {{obj.category}}</td>
+        <td>{{obj.budget}}</td>
+        <td>{{obj.spent}}</td>
+                           
+        <td align="center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <a  href  class="btn btn-default" id="edit" ><em class="fa fa-pencil"></em></a>
+              </div>
+              <div class="col-md-4">
+                <!-- This will delete the card -->
+                <a href  class="btn btn-danger" id="delete"><em class="fa fa-trash"  (click)="delete(data)"></em></a> 
+              </div>
+            </div>
+          </div>
+        </td>
+
+      </tr>
+
+    </table>
+            
+  </div>
+
+            

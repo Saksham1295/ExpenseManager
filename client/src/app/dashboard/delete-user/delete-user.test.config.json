@@ -1,0 +1,5 @@
+{
+	"data":{"ok": 1, "n": 0},
+	"mockResponse":{"ok": 1, "n": 0},
+	"negativeMockResponse":{"ok": 0, "n": 0}		
+}

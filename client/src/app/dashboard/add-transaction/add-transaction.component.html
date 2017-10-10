@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Sign Up Form</title>
+
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+</head>
+
+<body>
+
+  
+
+<div class="container">
+
+  <form>
+
+    <div class="row">
+
+      <h4>Transaction</h4>
+
+    <!--   <div class="row">
+
+       <div class="input-group, col-md-6">
+
+         <div class="input-group-btn">
+
+           <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+             Categor
+
+           </button>
+
+           <div class="dropdown-menu">
+
+               <ul>
+
+                   <li *ngFor="let i of channelDataList" (click)="onSelect(i.id)"><button>{{i.name}}</button></li>  --><!--iterate the channelDataLsit and on Select send the id-->
+
+     <!--           </ul>
+
+           </div>
+
+         </div>
+
+       </div>
+
+       
+
+        <div class="collapse navbar-collapse col-md-6" id="navbarSupportedContent">
+
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active">
+
+            <button type="button" class="btn btn-primary" routerLink="/favourite" routerLinkActive="active">Favourite<span class="sr-only">(current)</span></button> --> <!--Add to favourite button-->
+
+ <!--            </li>
+
+            &nbsp;
+
+          </ul>
+
+        </div>
+
+       
+
+      </div> -->
+
+<div class="dropdown">
+
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    Select Category
+
+  </button>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+    <ul>
+
+      <li class="dropdown-item" *ngFor="let i of categoryObject" (click)="onSelect(i.categoryId,i.categoryName)" >
+
+        {{i.categoryName}}
+
+      </li>
+
+    </ul>
+
+  </div>
+
+  
+
+</div>
+
+<div class="dropdown">
+
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    Select Card
+
+  </button>
+
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+    <ul>
+
+      <li class="dropdown-item" *ngFor="let j of accountObject" (click)="onSelectAccount(j.account_id)" >
+
+        {{j.name}}
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+      <!-- <div class="input-group input-group-icon"> -->
+
+        <input type="text" class="input-group input-group-icon"
+
+        name="description" placeholder="Description"
+
+        [(ngModel)]="data.description"
+
+        />
+
+        <div class="input-icon"></div>
+
+      <!-- </div> -->
+
+      <!-- <div class="input-group input-group-icon"> -->
+
+        <input type="text" name="expense" placeholder="Expense"
+
+          [(ngModel)]="data.expense"/>
+
+        <div class="input-icon"></div>
+
+      <!-- </div> -->
+
+      <!-- <div class="input-group input-group-icon"> -->
+
+        <input type="date"  name="dob" placeholder="Enter DOB"
+
+        [(ngModel)]="data.date"/>
+
+        <div class="input-icon"></div>
+
+      <!-- </div> -->
+
+      <button class="card-btn" (click)=addTransactionComp(data) >Submit</button>
+
+      <!-- <div class="form-group text-primary">
+
+                                    <label for="dob">Date of Birth</label>
+
+                                    <input type="date" [(ngModel)]="data.DOB" placeholder="Enter DOB" class="form-control " name="udob" id="dob" required="">
+
+                                </div> -->
+
+    </div>

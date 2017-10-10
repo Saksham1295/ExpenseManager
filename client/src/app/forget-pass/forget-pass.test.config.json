@@ -1,0 +1,17 @@
+{
+     "data" : {
+    "Email" : "prernathanai@gmail.com"
+  },
+       "dataotp" : {
+    "Email" : "prernathanai@gmail.com"
+      },
+      "mockResponse" : {
+        "Email":"prernathanai@gmail.com"
+      },
+      "data" : {
+        "Email":"prernathanai@gmail.com"
+      },
+      "dataNegative" : {
+        "Email":"prernathanai12@gmail.com"
+      }
+  }

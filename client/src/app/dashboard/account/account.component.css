@@ -1,0 +1,11 @@
+.details li {
+      list-style: none;
+    }
+    li {
+        margin-bottom:10px;
+        
+    }
+    .btn-primary{
+        background-color: #3f3250;
+        color: white;
+    }

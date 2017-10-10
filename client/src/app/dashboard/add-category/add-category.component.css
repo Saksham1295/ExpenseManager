@@ -1,0 +1,65 @@
+#category{
+background-color: #266979;
+color:white;
+}
+#edit{
+background-color: #266979;
+margin-left: -1.4em;
+color:white;
+}
+#budget{
+background-color: #266979;
+color:white;
+
+}
+#setting{
+background-color: #266979;
+color:white;
+
+}
+.btn-danger{
+	    /*margin-left: -.5em;*/
+	    background-color: #266979;
+	    border-color:#266979 
+}
+#icon{
+	margin-left: 1.5em;
+}
+/*#delete{
+	margin-left: -1em;
+}*/
+@media only screen and (min-width: 1024px) {
+  .table{
+   margin-left: -3em;
+  }
+
+  #category{
+background-color: #266979;
+color:white;
+width: 50%;
+}
+#edit{
+background-color: #266979;
+margin-left: -1.4em;
+color:white;
+size: 1em;
+}
+#budget{
+background-color: #266979;
+color:white;
+width: 50%;
+
+}
+#setting{
+background-color: #266979;
+color:white;
+width: 50%;
+
+}
+.btn-danger{
+	    /*margin-left: -.5em;*/
+	    background-color: #266979;
+	    border-color:#266979 ;
+	    size: 2em;
+}
+}

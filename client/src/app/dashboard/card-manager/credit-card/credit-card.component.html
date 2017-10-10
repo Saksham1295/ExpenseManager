@@ -1,0 +1,12 @@
+<div class="card md-3">
+  <div class="hovereffect">
+    <img class="card-img-top" src="https://images001.rubique.com/credit_card_images/hdfc/hdfc_moneyback_36.png" alt="Card image cap">
+    <div class="overlay">
+      <h2 >{{word.cardNo}}: {{obj.cardNo}}</h2>
+      <h2>{{word.expDate}}: {{obj.expDate}}</h2>
+      <h2>{{word.holderName}}: {{obj.holderName}}</h2>   
+    </div>
+  </div>
+</div>
+<p>{{word.tracking}} </p>
+<button (click)="toggle(obj.cardNo)">{{obj.flag}}</button>

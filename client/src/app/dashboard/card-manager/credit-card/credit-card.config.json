@@ -1,0 +1,19 @@
+{"data": {
+    "flag":"false"
+  },
+  "dataPos": {
+    "flag":"true"
+  },
+
+  "dataRes": {
+    "flag":"false"
+  },
+
+  "dataResNeg" : {
+    "flag":"true"
+  },
+  "mockResponse" :{
+		"flag":"true"
+
+			}
+}

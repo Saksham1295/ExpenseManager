@@ -1,0 +1,112 @@
+<div class="container-fluid"> 
+      <!-- Breadcrumbs-->
+     <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+    
+
+
+<div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+
+
+
+
+
+
+<!--                                             FINALIZED CHARTS                                                             -->
+
+
+
+<div class="col-md-12">
+
+
+
+
+
+<div>
+<h1> Category Budget and Expense Comparison - Line Chart </h1>
+   <div class="col-md-6">
+
+     <canvas id = "categoryBvE" baseChart
+
+     [data]="categoryBvEData"
+
+     [labels]="categoryChartLabels"
+
+     [options]="ChartOptions"
+
+     [colors]="ChartColors"
+
+     [chartType]="categoryBvEType"
+
+     (chartHover)="chartHovered($event)"
+
+     (chartClick)="chartClicked($event)"></canvas>
+
+   </div>
+
+</div>
+
+<div>
+<h1> Category Total Monthly Show Case </h1>
+   <div class="col-md-6">
+
+     <canvas id = "doughnutCategory" baseChart
+
+     [data]="totalChartData"
+
+     [labels]="ChartLabelsMonth"
+
+     [options]="ChartOptions"
+
+     [colors]="ChartColors"
+
+     [chartType]="monthlyTotalChartType"
+
+     (chartHover)="chartHovered($event)"
+
+     (chartClick)="chartClicked($event)"></canvas>
+
+   </div>
+
+</div>
+
+<div>
+<h1> Category Expense - Doughnut Chart </h1>
+   <div class="col-md-6">
+
+     <canvas id = "doughnutCategory" baseChart
+
+     [data]="categoryDoughnutData"
+
+     [labels]="categoryChartLabels"
+
+     [options]="ChartOptions"
+
+     [colors]="ChartColors"
+
+     [chartType]="categoryDoughnutType"
+
+     (chartHover)="chartHovered($event)"
+
+     (chartClick)="chartClicked($event)"></canvas>
+
+   </div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<!--                                             FINALIZED CHARTS                                                             -->
+  
+
+
+</div>

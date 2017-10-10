@@ -1,0 +1,13 @@
+{
+	"categories":{
+		"response":{"n":1,"ok":1,"nModified":1},
+		"data":{"response":"category already exixts"},
+		"email":{"Email":"nishantjaiswal@gmail.com"},
+		"category":[{
+                    "categoryId":"1","categoryName":"Home"
+                }],
+		"negativeResponse": [{ "ok": "0","nModified": "0","n": "0"}],
+		"categoryData":{"categoryName":"loan","Email":"nishantjaiswal49@gmail.com"},
+		"categoryResponse":{"Response":"category Name alerady exist"}
+	}
+}

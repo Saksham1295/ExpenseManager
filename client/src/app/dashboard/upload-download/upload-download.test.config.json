@@ -1,0 +1,5 @@
+{
+	
+	"mockResponse":{"message": "Data Uploaded Successfully"},
+	"negativeMockResponse":{"message": "Data Not Uploaded"}		
+}

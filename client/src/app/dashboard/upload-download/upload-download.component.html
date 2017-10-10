@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row"><br><br></div>
+  <div class="row justify-content-center">
+    <div class="col-lg-3" >
+      <label class="custom-file">
+        <input type="file" id="file" name="file"  class="custom-file-input" accept=".xls,.xlsx">
+        <input type="text" name="" placeholder={{fileName}} readonly />
+        <span class="custom-file-control"></span>
+      </label>
+    </div>
+    <div class="col-lg-1">
+    <!-- This will upload the file -->
+      <button type="button" (click)="userUpload()" class="btn btn-primary">
+        {{word.uploadButtonText}}
+      </button> 
+    </div>&nbsp; 
+    <div class="col-lg-1">
+    <!-- This will download the document -->
+      <a href="https://drive.google.com/uc?authuser=0&id=0B2iLCM06R7SFOWg0NzdRczZwSW8&export=download" download="template.xlsx" class="btn btn-primary"> {{word.downloadTemplateButtonText}}</a>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+    <br>
+    <br>
+    <!-- This is the response message -->
+    <h4 class="text-center font-italic text-success">{{responseMessage}}</h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+<!--Model-->
+<div id="Add-Card" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="invite_user_info" action="" (ngSubmit)="onSubmit()" #cardManager="ngForm">
+        <input type="hidden" name="csrfmiddlewaretoken" value="EWOIvVzzLzQnlowipCXQAQ49b9rS4aNE">
+          <div class="modal-header" id="header">
+            <h4 class="modal-title">{{word.cardDetails}}</h4>
+              <!--button-->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body clearfix">
+            <div class="col-lg-12">
+              <div class="form-group" id="input">
+              <!--==========Enter card details==================-->
+                <label for="Card No." id="cardnum">{{word.cardNo}}</label>
+                <input type="text" [(ngModel)]="data.cardNo" name="Card No"
+                id="cardNo"
+                required
+                pattern="[0-9]*"
+                minlength="16"
+                maxlength="16"  
+                #cardNo="ngModel"
+                class="form-control">
+              </div>
+              <!-- Form validation -->
+              <div [hidden]="cardNo.valid || cardNo.pristine"
+              class="alert alert-danger">
+                <div [hidden]="!cardNo.hasError('minlength')">{{word.minLenErr}}</div>
+                <div [hidden]="!cardNo.hasError('required')">{{word.reqErr}}</div>
+                <div [hidden]="!cardNo.hasError('pattern')">{{word.reqNoOnly}}</div>
+              </div>
+              <div class="form-group">
+                <label for="card holder">{{word.cardHolder}}</label>
+                <input type="text" [(ngModel)]="data.holderName" name="card holder"
+                id="holderName"
+                required
+                pattern="[a-zA-Z][a-zA-Z ]+" 
+                class="form-control"
+                #holdername="ngModel">
+              </div>
+              <div [hidden]="holdername.valid || holdername.pristine"
+              class="alert alert-danger">
+                <div [hidden]="!holdername.hasError('required')">{{word.reqHolder}}</div>
+                <div [hidden]="!holdername.hasError('pattern')">{{word.reqAlpha}}</div>
+              </div>
+              <div class="form-group">
+                <label for="cvc">{{word.cvv}}</label>
+                <input type="password" [(ngModel)]="data.cvv" name="CVV"
+                id="cvv"
+                required
+                pattern="[0-9]*"
+                minlength="3"
+                maxlength="3"
+                #cvvnumber="ngModel" 
+                class="form-control">
+              </div>
+              <div [hidden]="cvvnumber.valid || cvvnumber.pristine"
+              class="alert alert-danger">
+              <div [hidden]="!cvvnumber.hasError('minlength')">{{word.reqMinCvv}}</div>
+              <div [hidden]="!cvvnumber.hasError('required')">{{word.reqCvv}}</div>
+              <div [hidden]="!cvvnumber.hasError('pattern')">{{word.reqCvvPat}}</div>
+            </div>  
+          <div class="form-group">
+            <label for="Exp-Date">{{word.expDate}}</label>
+            <input type="date" [(ngModel)]="data.expDate" name="Exp-date" class="form-control">
+          </div>
+        </div>
+      </div>
+      <!-- Cancel button -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{word.cancel}}</button>
+        <!-- Save Button -->
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addCard()">{{word.save}}</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+<!-- Header for displaying Saved cards -->
+<div class="panel-fluid" id="panel">
+ <div class="container">
+   <div class="row" id="heading">
+     <h1 id="headingtext">{{word.savedCard}}</h1>
+     <div class="col col-xs-6 text-right">
+       <a href="javascript:;" id="but1" class="card-btn" data-toggle="modal" data-target="#Add-Card" title="Add User">
+       <!-- Add Card button -->
+        <i class="glyphicon glyphicon-user" aria-hidden="true"></i>{{word.addCard}}</a>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- Body to display all cards -->
+<div class="jumbotron">
+
+  <div class="container" *ngIf="cardData" id="container">
+
+   <div class ="row" id=cards>
+   <!-- Display each card on cardData using ngFor -->
+     <div  class="col-lg-4 col-md-4 col-sm-2"  id="card1" *ngFor="let obj of cardData[0].Account; let i=index">
+      <div class="card-block" >
+       <!-- Child Component of card-manager -->
+       <app-credit-card [obj]="obj" [i]="i"></app-credit-card>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+

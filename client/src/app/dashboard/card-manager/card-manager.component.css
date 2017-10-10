@@ -1,0 +1,220 @@
+#body {
+ background-color: silver;
+ margin-top: px;
+}
+#panel{
+ background-color: #266979 ;
+}
+h1{
+color: white;
+   font-size: 2em;
+   padding-top: .5em;
+   padding-left: .5em;
+   /* font-style: initial; */
+   font-kerning: unset;
+   font-variant-caps: titling-caps;
+   -webkit-font-smoothing: subpixel-antialiased;
+}
+.btn-primary
+{
+ background-color: #266979 ;
+ color: white;
+ border-color: #266979 ;
+}
+#header{
+ background-color: #266979 ;
+}
+h3  {
+ text-align: center;
+}
+#card-number{
+ text-align: center;
+ font-size: 20px;
+}
+h4
+{
+     margin-top: 30px;
+  color:white;
+}
+.close{
+ color: white;
+}
+
+.col-md-6
+{
+ height: 70%;
+}
+#budget1
+{
+ margin-top: 40px;
+}
+#header{
+   background-color: #266979;
+}
+#Add
+{
+text-align:right;
+}
+.jumbotron{
+   border-radius:0px!important;
+   box-shadow:1px 1px 4px rgba(0,0,0,0.4);
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   /*background-image: url(https://static.pexels.com/photos/24324/pexels-photo.jpg);*/
+   position: relative;
+   height: 100%;
+   background-color: white;
+margin-top: 50px;
+   /*height: 100%;*/
+
+}
+
+.jumbotron .btn{
+   border-radius:0px!important;
+   box-shadow:1px 1px 4px rgba(0,0,0,0.4);
+   padding:10px 40px;
+   margin-left: 40px;
+   background-color: #266979 ;
+   color: silver;
+}
+
+
+
+#card-block2{
+ background-image: url("")
+}
+#card-number{
+ padding-top: .5em;
+ color: black;
+ font-size: 1.5em;
+}
+
+#buttons{
+ margin-top: 3em;
+ padding-left:2em;
+
+}
+
+#cards{
+ padding-top: 2em;
+ padding-left: .5em;
+ padding-right: .5em;
+
+
+}
+
+
+#container{
+ margin-top: -3em;
+}
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 60px;
+ height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #ccc;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+
+.slider:before {
+ position: absolute;
+ content: "";
+ height: 26px;
+ width: 26px;
+ left: 4px;
+ bottom: 4px;
+ background-color: white;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+
+input:checked + .slider {
+ background-color: red;
+}
+
+input:focus + .slider {
+ box-shadow: 0 0 1px red;
+}
+
+input:checked + .slider:before {
+ -webkit-transform: translateX(26px);
+ -ms-transform: translateX(26px);
+ transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+ border-radius: 34px;
+}
+
+.slider.round:before {
+ border-radius: 50%;
+}
+.card-btn{
+ padding-top: 1em;
+ color: white;
+}
+.text-right{
+ padding-top: 1em;
+}
+
+
+
+
+/* Padding - just for asthetics on Bootsnipp.com */
+body { margin-top:20px; }
+
+/* CSS for Credit Card Payment form */
+.credit-card-box .panel-title {
+   display: inline;
+   font-weight: bold;
+}
+.credit-card-box .form-control.error {
+   border-color: red;
+   outline: 0;
+   box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+ font-weight: bold;
+ color: red;
+ padding: 2px 8px;
+ margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+ font-weight: bold;
+ color: red;
+ padding: 2px 8px;
+ margin-top: 2px;
+}
+.credit-card-box label {
+   display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+   display: table;
+}
+.credit-card-box .display-tr {
+   display: table-row;
+}
+.credit-card-box .display-td {
+   display: table-cell;
+   vertical-align: middle;
+   width: 50%;
+}
+/* Just looks nicer */
+.credit-card-box .panel-heading img {
+   min-width: 180px;
+}

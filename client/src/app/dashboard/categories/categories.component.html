@@ -1,0 +1,150 @@
+<!--  <h3 class="first">Password</h3>
+<input pPassword type="password"/>
+<h3 class="first">Addons</h3>
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+            <input type="text" pInputText placeholder="Username">         
+        </div>
+    </div>
+    
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">$</span>
+            <input type="text" pInputText placeholder="Price">   
+            <span class="ui-inputgroup-addon">.00</span>      
+        </div>
+    </div>
+            
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">www</span>
+            <input type="text" pInputText placeholder="Website">      
+        </div>
+    </div> 
+</div> -->
+
+  <!-- Add category Modal -->
+  <div id="Add-Category" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="invite_user_info" action="">
+          <input type="hidden" name="csrfmiddlewaretoken" value="EWOIvVzzLzQnlowipCXQAQ49b9rS4aNE">
+          <div class="modal-header" id="modal">    
+            <h4 class="modal-title" id="h1">{{word.addCategory}}</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+          <div class="modal-body clearfix">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label for="Card Name" id="categorylabel">{{word.category}} </label>
+                <input type="text" [(ngModel)]="data.categoryName" name="categoryName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="Card Name" id="categorylabel">{{word.budget}} </label>
+                <input type="text" [(ngModel)]="data.budget" name="categoryName" class="form-control">
+              </div>        
+            </div>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" id="save" class="btn btn-primary" data-dismiss="modal" (click)="addCategory(data)">{{word.save}}</button>
+
+          </div>
+
+        </form>
+
+      </div><!-- /.modal-content -->
+
+    </div><!-- /.modal-dialog -->
+
+  </div>
+
+  <div class="container-fluid"> 
+
+    <!-- Breadcrumbs-->
+
+    <ol class="breadcrumb">
+
+      <li class="breadcrumb-item">
+
+        <a routerLink="/dashboard">Dashboard</a>
+
+      </li>
+
+      <li class="breadcrumb-item active">{{word.budget}}</li>
+
+      <li class="text-right">
+
+        <!-- <div class="col col-xs-6 text-right"> -->
+
+        <a href="javascript:;" class="card-btn" data-toggle="modal" data-target="#Add-Category" title="Add User">
+
+          <i class="glyphicon glyphicon-user" aria-hidden="true" id ="categ"></i>{{word.addCategories}}</a>
+
+          <!-- </div> -->
+        </li>
+      </ol>
+    </div>  
+
+    <!-- <div class="jumbotron">  <!-- jumbotron -->    
+
+     <div class="container" > 
+       <div class="panel-body table-responsive">
+        <table class="table table-striped table-bordered table-list" id="table">
+          <thead>
+
+           <tr>
+
+            <th id="setting">{{word.category}}</th>
+
+            <th id="setting">{{word.budget}}</th> 
+
+            <th id="setting"><em class="fa fa-cog" ></em></th> 
+
+          </tr>  
+
+        </thead>
+
+        <tbody id="myTable">
+
+        <!-- Categories Table -->
+
+          <tr *ngFor="let object of categoryObjects; let i=index">
+            <td> <span *ngIf="!editFlag">{{object.categoryName}}</span>
+              <div *ngIf="editFlag">
+                <input class="form-control" type="text" [(ngModel)]="object.categoryName">
+              </div>
+            </td>
+            <td> <span *ngIf="!editFlag">{{object.budget}}</span>
+             <div *ngIf="editFlag">
+              <input class="form-control" type="text" [(ngModel)]="object.budget">
+            </div>
+          </td>
+          <td align="center" id="table-list">
+           <div class="container">
+            <div class="row">
+              <!-- <div class="col-sm-4"> -->
+                <button (click)="deleteCategory(object)" class="btn btn-danger" id="delete"><em class="fa fa-trash" ></em></button>
+
+              <!-- </div> -->
+              <!-- <div class="col-sm-4"> -->
+               <button *ngIf="!editFlag"  class="btn btn-danger" id="edit" [attr.id]="i" (click)="edit()"><em class="fa fa-pencil" ></em>
+               </button>
+             <!-- </div> -->
+             <!-- <div class="col-sm-4"> -->
+               <button  *ngIf="editFlag" class="btn btn-danger" id="edit" [attr.id]="i" (click)="updateCategory(object)"><em class="fa fa-pencil-square-o" ></em>
+               </button>
+             <!-- </div> -->
+           </div>
+         </div>
+       </td>
+     </tr>
+   </tbody>
+
+ </table> <!-- end of table -->
+
+</div>
+</div>
+<!-- </div> -->

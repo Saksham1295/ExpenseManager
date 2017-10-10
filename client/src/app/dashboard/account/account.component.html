@@ -1,0 +1,24 @@
+<div class="container">    
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+        <img src="http://www.vivalifestyleandtravel.com/images/imgs/default-profile-pic.png" alt="stack photo" class="img">
+      </div>
+      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+        <div class="container" style="border-bottom:1px solid black">
+        <h2>{{data.fullName}}</h2>
+        </div>
+        <hr>
+        <ul class="container details">
+          <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>{{data.contact}}</p></li>
+          <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{data.email}}</p></li>
+          <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>{{data.dob}}</p></li>
+          <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><button class="btn btn-primary" (click)="deleteAccount()">Delete Account</button>
+            <span class="glyphicon glyphicon-new-window one" style="width:50px;"></span>
+            <!-- <button class="btn btn-primary">Edit Account</button> -->
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

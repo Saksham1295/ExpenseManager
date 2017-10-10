@@ -1,0 +1,78 @@
+<div class="container-fluid"> 
+      <!-- Breadcrumbs-->
+     <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a>Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Transactions</li>
+         </ol>
+      </div>
+    
+    <!-- <div class="jumbotron"> -->
+     <div class="container" > 
+    <div class="panel-body table-responsive">
+  <table class="table table-striped table-bordered table-list" id="table">
+    <thead>
+      <!-- 
+        The following displays the list of
+          * Spending Category
+          * Spending Budget
+          * Money Spent on the category  
+      -->
+      <tr>
+        <th id="setting">Transaction Number</th>
+        <th id="setting" >Category</th>
+        <th id="setting" >Expense</th>
+        <th id="setting">Description</th>
+        <th id="setting" >setting</th>
+      </tr> 
+    </thead>
+
+    <tbody id="myTable">
+
+<tr *ngFor="let object of list; let i=index">
+            <td> <span *ngIf="!editFlag">{{object.transaction_id}}</span>
+              <div *ngIf="editFlag">
+                <input class="form-control" type="text" [(ngModel)]="object.transaction_id">
+              </div>
+            </td>
+            <td> <span *ngIf="!editFlag">{{object.categoryId}}</span>
+             <div *ngIf="editFlag">
+              <input class="form-control" type="text" [(ngModel)]="object.categoryId">
+            </div>
+          </td>
+          <td> <span *ngIf="!editFlag">{{object.expense}}</span>
+             <div *ngIf="editFlag">
+              <input class="form-control" type="text" [(ngModel)]="object.expense">
+            </div>
+          </td>
+          <td> <span *ngIf="!editFlag">{{object.description}}</span>
+             <div *ngIf="editFlag">
+              <input class="form-control" type="text" [(ngModel)]="object.description">
+            </div>
+          </td>
+          <td align="center">
+           <div class="container">
+            <div class="row">
+              <!-- <div class="col-sm-6"> -->
+                <button (click)="deleteTransaction(object)" class="btn btn-danger" id="delete"><em class="fa fa-trash" ></em></button>
+              <!-- </div> -->
+              <!-- <div class="col-sm-6"> -->
+               <button *ngIf="!editFlag"  class="btn btn-danger" id="edit" [attr.id]="i" (click)="edit()"><em class="fa fa-pencil" ></em>
+               </button>
+             <!-- </div> -->
+             <!-- <div class="col-sm-6"> -->
+               <button  *ngIf="editFlag" class="btn btn-danger" id="edit" [attr.id]="i" (click)="updateTransaction(object)"><em class="fa fa-pencil-square-o" ></em>
+               </button>
+             <!-- </div> -->
+           </div>
+         </div>
+       </td>
+     </tr>
+   </tbody>
+ </table> <!-- end of table -->
+</div>
+</div>
+<!-- </div> -->
+
+

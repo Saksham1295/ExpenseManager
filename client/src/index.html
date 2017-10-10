@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ExpenseManager</title>
+  <base href="/">
+
+  <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+  
+  <button onclick="openPlaid()" hidden="">Open Link</button>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<!-- <link rel="stylesheet" type="text/css" href="YOUR_PATH/font-awesome.min.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/omega/theme.css" />
+<link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/omega/theme.css" />
+<link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" /> -->
+  <script>
+
+// @Input() id: string;
+
+// var public_token,
+var a=10;
+	var linkHandler = Plaid.create({
+ 	apiVersion: 'v2',
+    clientName: 'Plaid Walkthrough Demo',
+    env: 'sandbox',
+    product: ['transactions'],
+    key: '0db4a76988169fc8ed287c31fdf94a',
+    forceIframe:true,
+    
+ 	onSuccess: function(public_token, metadata) {
+    console.log('hello index.html', public_token);
+    
+    this.public_token=public_token;
+    localStorage.setItem("public_token",public_token);
+  
+    window.location.reload();
+
+     // $('#container').fadeOut('fast', function() {
+     // $('#intro').hide();
+     // $('#app, #steps').fadeIn('slow');
+
+     // onTransfer();
+   // Send the public_token to your app server here.
+   // The metadata object contains info about the
+   // institution selected and, if the Select Account
+   // view is enabled, information about the account(s)
+   // the user selected too.
+ 	},
+	 onExit: function(err, metadata) {
+	   // The user exited the Link flow.
+	   if (err != null) {
+	     // The user encountered a Plaid API error
+	     // prior to exiting.
+	   }
+	   // metadata contains information about the
+	   // institution that the user selected and the
+	   // most recent API request IDs. Storing this
+	   // information can be helpful for support.
+	 },
+	 onEvent: function(eventName, metadata) {
+	   // Optionally capture Link flow events, streamed through
+	   // this callback as your users connect an Item to Plaid.
+	 },
+	}); 
+	
+	// Trigger the standard institution select view
+	 function openPlaid() {
+	 linkHandler.open();
+	};
+	// function  getAccounts(){
+ //    alert("hey welcome");
+ //  }
+
+</script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
